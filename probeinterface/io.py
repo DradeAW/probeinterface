@@ -1003,7 +1003,7 @@ def read_openephys(
     root = tree.getroot()
 
     info_chain = root.find("INFO")
-    oe_version = parse(str(info_chain.find("VERSION")))
+    oe_version = parse(str(info_chain.find("VERSION").text))
     signal_chain = root.find("SIGNALCHAIN")
     neuropix_pxi = None
     for processor in signal_chain:
